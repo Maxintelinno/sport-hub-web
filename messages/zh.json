@@ -1,0 +1,106 @@
+{
+  "Index": {
+    "title": "Royal Sports Hub | 轻松预订运动场地",
+    "description": "一站式搜索、预订和管理运动场地，简单快捷。"
+  },
+  "Navbar": {
+    "about": "关于我们",
+    "owners": "场地主专区",
+    "guide": "使用指南",
+    "contact": "联系我们",
+    "download": "下载应用",
+    "lang_th": "泰语",
+    "lang_en": "英语",
+    "lang_zh": "中文"
+  },
+  "Hero": {
+    "headline": "轻松预订运动场地",
+    "subheadline": "一站式搜索、预订和管理运动场地，简单快捷。",
+    "cta_app": "下载应用",
+    "cta_owner": "场地主入口",
+    "tagline": "预订 • 运动 • 乐享"
+  },
+  "Features": {
+    "title": "核心功能",
+    "f1_title": "简单几步即可预订",
+    "f1_desc": "搜索您附近的场馆并通过应用立即预订。",
+    "f2_title": "实时查看空闲时间",
+    "f2_desc": "实时查看场馆状态，无需等待人工确认。",
+    "f3_title": "便捷二维码支付",
+    "f3_desc": "支持各大银行的安全二维码支付。",
+    "f4_title": "专业的场地管理系统",
+    "f4_desc": "为场馆主提供高效的排期和收入管理系统。"
+  },
+  "HowItWorks": {
+    "title": "使用流程",
+    "step1_title": "查找附近场地",
+    "step1_desc": "选择您喜欢的运动类型和地点。",
+    "step2_title": "选择日期与时间",
+    "step2_desc": "查看空闲时段并立即预订。",
+    "step3_title": "支付并确认预订",
+    "step3_desc": "安全支付并即时获取确认信息。"
+  },
+  "ForOwners": {
+    "title": "轻松提升您的场地收入",
+    "feature1": "高效管理预订",
+    "feature2": "安全收款",
+    "feature3": "实时查看收入数据",
+    "cta": "立即加入"
+  },
+  "AppPreview": {
+    "title": "随时随地预订您最喜欢的球场",
+    "subtitle": "通过专门为运动爱好者设计的应用，体验最流畅的预订流程。",
+    "feature1": "用户友好的界面",
+    "feature2": "实时预订通知",
+    "feature3": "赚取积分和折扣",
+    "feature4": "经过验证的用户评论"
+  },
+  "Testimonials": {
+    "title": "用户评价",
+    "user1_name": "Noppol",
+    "user1_comment": "非常好用，预订很快！",
+    "user2_name": "Rinda",
+    "user2_comment": "确实帮助我们增加了客户。",
+    "user3_name": "Wichai",
+    "user3_comment": "管理系统很方便，节省了很多时间。"
+  },
+  "CTA": {
+    "title": "立即开始使用 Sport Hub",
+    "subtitle": "体验最简单的场地预订方式",
+    "button_app": "下载应用",
+    "button_owner": "场馆主入驻"
+  },
+  "Footer": {
+    "about_us": "关于我们",
+    "contact": "联系我们",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "rights": "© 2024 Royal Sports Hub. 版权所有。"
+  },
+  "About": {
+    "hero_title": "关于 Royal Sports",
+    "hero_subtitle": "泰国最现代化的运动场地预订平台",
+    "description_title": "快乐的起点",
+    "description_text": "Royal Sports 的诞生源于让每个人都能轻松运动的初衷。我们相信，寻找健康的活动空间不应是一件麻烦事。因此，我们开发了先进的技术，帮助您在几秒钟内找到并预订心仪的场地。",
+    "vision_title": "愿景",
+    "vision_desc": "成为体育社区的核心，通过现代技术连接每一个人。",
+    "mission_title": "我们的使命",
+    "mission_item1": "提供无缝的预订体验",
+    "mission_item2": "支持场地主实现可持续增长",
+    "mission_item3": "建设更强大、更健康的社区",
+    "story_title": "我们的故事",
+    "story_step1_title": "发现问题",
+    "story_step1_desc": "传统的预订方式繁琐，需要打电话且存在不确定性。",
+    "story_step2_title": "创新突破",
+    "story_step2_desc": "我们创建了最精准、最易用的实时预订系统。",
+    "story_step3_title": "取得成功",
+    "story_step3_desc": "今天，我们拥有超过 50,000 名用户和 1,200 多家合作伙伴场地。",
+    "why_title": "为什么选择我们？",
+    "why_item1_title": "值得信赖",
+    "why_item1_desc": "稳定精准的系统，配有专业的团队支持。",
+    "why_item2_title": "持续创新",
+    "why_item2_desc": "不断开发新功能，满足现代生活方式。",
+    "why_item3_title": "成长的社区",
+    "why_item3_desc": "不仅仅是一个预订应用，更是真正运动爱好者的空间。"
+  }
+}

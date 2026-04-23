@@ -1,0 +1,106 @@
+{
+  "Index": {
+    "title": "Royal Sports Hub | Book Sports Fields in Seconds",
+    "description": "Search, book, and manage sports venues all in one place."
+  },
+  "Navbar": {
+    "about": "About Us",
+    "owners": "For Owners",
+    "guide": "Guide",
+    "contact": "Contact",
+    "download": "Download App",
+    "lang_th": "Thai",
+    "lang_en": "English",
+    "lang_zh": "Chinese"
+  },
+  "Hero": {
+    "headline": "Book Sports Fields in Seconds",
+    "subheadline": "Search, book, and manage sports venues all in one place.",
+    "cta_app": "Download App",
+    "cta_owner": "For Field Owners",
+    "tagline": "Book • Play • Enjoy"
+  },
+  "Features": {
+    "title": "Key Features",
+    "f1_title": "Easy booking in just a few steps",
+    "f1_desc": "Find nearby fields and book instantly via the app.",
+    "f2_title": "Real-time availability",
+    "f2_desc": "Check live status and book without waiting for confirmation.",
+    "f3_title": "Convenient QR payment",
+    "f3_desc": "Support all major banks with secure QR payments.",
+    "f4_title": "Professional field management system",
+    "f4_desc": "Powerful tools for owners to manage schedules and revenue."
+  },
+  "HowItWorks": {
+    "title": "How It Works",
+    "step1_title": "Find nearby sports fields",
+    "step1_desc": "Choose your sport and preferred location.",
+    "step2_title": "Choose your date and time",
+    "step2_desc": "Select an available slot and book instantly.",
+    "step3_title": "Pay and confirm instantly",
+    "step3_desc": "Secure payment and immediate confirmation."
+  },
+  "ForOwners": {
+    "title": "Grow Your Field Business with Ease",
+    "feature1": "Manage bookings effortlessly",
+    "feature2": "Receive payments securely",
+    "feature3": "Track your revenue in real-time",
+    "cta": "Join as a Field Owner"
+  },
+  "AppPreview": {
+    "title": "Book Your Favorite Courts Anytime, Anywhere",
+    "subtitle": "Experience the smoothest booking process with an app designed specifically for sports lovers.",
+    "feature1": "User-friendly interface",
+    "feature2": "Real-time booking notifications",
+    "feature3": "Earn points and discounts",
+    "feature4": "Verified user reviews"
+  },
+  "Testimonials": {
+    "title": "What Our Users Say",
+    "user1_name": "Noppol",
+    "user1_comment": "Super easy to use and fast booking!",
+    "user2_name": "Rinda",
+    "user2_comment": "Our field gets more customers now.",
+    "user3_name": "Wichai",
+    "user3_comment": "Great management system, saves a lot of time."
+  },
+  "CTA": {
+    "title": "Start with Sport Hub Today",
+    "subtitle": "Experience the easiest way to book sports fields",
+    "button_app": "Download App",
+    "button_owner": "Join as an Owner"
+  },
+  "Footer": {
+    "about_us": "About Us",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "© 2024 Royal Sports Hub. All rights reserved."
+  },
+  "About": {
+    "hero_title": "About Royal Sports",
+    "hero_subtitle": "The most modern sports booking platform in Thailand",
+    "description_title": "The Beginning of Fun",
+    "description_text": "Royal Sports was born from the intention to make sports accessible to everyone. We believe that finding space for health shouldn't be difficult. That's why we develop technology that helps you find the right field and book it in seconds.",
+    "vision_title": "Vision",
+    "vision_desc": "To be the heart of the sports community, connecting everyone through modern technology.",
+    "mission_title": "Our Mission",
+    "mission_item1": "Provide a seamless booking experience",
+    "mission_item2": "Support field owners for sustainable growth",
+    "mission_item3": "Build a stronger, healthier community",
+    "story_title": "Our Story",
+    "story_step1_title": "The Problem",
+    "story_step1_desc": "Old-fashioned booking methods were difficult, requiring phone calls and uncertainty.",
+    "story_step2_title": "Innovation",
+    "story_step2_desc": "We created the most accurate and easy-to-use Real-time Booking system.",
+    "story_step3_title": "Success",
+    "story_step3_desc": "Today we have over 50,000 users and more than 1,200 partner fields.",
+    "why_title": "Why Choose Us?",
+    "why_item1_title": "Reliable",
+    "why_item1_desc": "Stable and accurate system with professional support.",
+    "why_item2_title": "Innovation",
+    "why_item2_desc": "Constantly developing new features to meet modern lifestyles.",
+    "why_item3_title": "Growing Community",
+    "why_item3_desc": "Not just a booking app, but a space for true sports lovers."
+  }
+}
