@@ -1,56 +1,45 @@
 'use client';
 
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Calendar, User, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function BlogPage() {
+  const t = useTranslations('Blog');
+
   const posts = [
     {
-      title: "5 เทคนิคการเลือกสนามฟุตบอลหญ้าเทียมให้เหมาะกับทีมของคุณ",
-      excerpt: "การเลือกสนามฟุตบอลหญ้าเทียมไม่ใช่เรื่องยาก แต่ต้องคำนึงถึงปัจจัยหลายอย่าง เช่น คุณภาพหญ้า พื้นที่ และความสะดวก...",
-      date: "20 เม.ย. 2024",
-      author: "Admin SportHub",
-      category: "เทคนิคกีฬา"
+      ...t.raw('posts.post1'),
     },
     {
-      title: "แนะนำอุปกรณ์แบดมินตันสำหรับมือใหม่หัดเล่น",
-      excerpt: "หากคุณเพิ่งเริ่มหันมาสนใจแบดมินตัน ไม้แบดและรองเท้าคือหัวใจสำคัญที่เราควรเลือกให้ถูกต้อง...",
-      date: "18 เม.ย. 2024",
-      author: "Pro Player",
-      category: "แนะนำอุปกรณ์"
+      ...t.raw('posts.post2'),
     },
     {
-      title: "ทำไมการวอร์มอัพถึงสำคัญก่อนลงสนามจริง?",
-      excerpt: "หลายคนอาจละเลยการวอร์มอัพ แต่รู้หรือไม่ว่ามันช่วยลดความเสี่ยงจากการบาดเจ็บได้ถึง 70%...",
-      date: "15 เม.ย. 2024",
-      author: "Coach K",
-      category: "สุขภาพ"
+      ...t.raw('posts.post3'),
     }
   ];
 
   return (
-    <main className="min-h-screen pt-32 pb-20">
-      <Navbar />
-      <div className="container mx-auto px-4">
+    <main className="min-h-screen pt-32 pb-20 bg-gray-50/30">
+      <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
              <motion.h1
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
-               className="text-5xl font-extrabold text-primary mb-6"
+               className="text-5xl md:text-6xl font-black text-[#0B3D2E] mb-6 tracking-tight"
              >
-               Sport Hub Blog
+               {t('title')}
              </motion.h1>
-             <p className="text-xl text-gray-600">
-               บทความสาระดีๆ เกี่ยวกับกีฬา สุขภาพ และเทคนิคการเล่นที่คุณไม่ควรพลาด
+             <p className="text-xl text-gray-500 max-w-2xl mx-auto font-light">
+               {t('subtitle')}
              </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {posts.map((post, i) => (
               <motion.div
                 key={i}
@@ -58,31 +47,41 @@ export default function BlogPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
               >
-                <Card className="h-full border-none shadow-xl rounded-[2rem] overflow-hidden group hover:shadow-2xl transition-all">
-                  <div className="aspect-[16/9] bg-primary/10 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-primary/20 group-hover:scale-110 transition-transform duration-500" />
-                    <div className="absolute top-4 left-4 bg-accent text-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                       {post.category}
+                <Link href={`/blog/${post.slug}`}>
+                  <Card className="h-full border-none shadow-xl rounded-[2.5rem] overflow-hidden group hover:shadow-2xl transition-all duration-500 bg-white">
+                    <div className="aspect-[4/3] relative overflow-hidden">
+                      <Image 
+                        src={post.image} 
+                        alt={post.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute top-6 left-6 bg-accent text-[#0B3D2E] px-4 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider shadow-lg">
+                         {post.category}
+                      </div>
                     </div>
-                  </div>
-                  <CardContent className="p-8">
-                    <div className="flex items-center gap-4 text-xs text-gray-400 mb-4">
-                       <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {post.date}</span>
-                       <span className="flex items-center gap-1"><User className="h-3 w-3" /> {post.author}</span>
-                    </div>
-                    <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{post.title}</h3>
-                    <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed">{post.excerpt}</p>
-                    <Button variant="ghost" className="p-0 text-primary font-bold hover:bg-transparent group/btn">
-                       อ่านเพิ่มเติม <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                    </Button>
-                  </CardContent>
-                </Card>
+                    <CardContent className="p-8">
+                      <div className="flex items-center gap-4 text-xs text-gray-400 mb-5 font-medium">
+                         <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5 text-accent" /> {post.date}</span>
+                         <span className="flex items-center gap-1.5"><User className="h-3.5 w-3.5 text-accent" /> {post.author}</span>
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4 text-[#0B3D2E] group-hover:text-accent transition-colors leading-tight">{post.title}</h3>
+                      <p className="text-gray-500 mb-8 line-clamp-3 leading-relaxed font-light">{post.excerpt}</p>
+                      <div className="flex items-center text-[#0B3D2E] font-black group/btn text-sm">
+                         {t('read_more')} 
+                         <div className="ml-2 w-8 h-8 rounded-full bg-[#0B3D2E]/5 flex items-center justify-center group-hover/btn:bg-accent transition-colors">
+                           <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                         </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
-      <Footer />
     </main>
   );
 }

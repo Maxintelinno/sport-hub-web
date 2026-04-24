@@ -145,7 +145,7 @@ export default function FAQPage() {
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Accordion type="single" collapsible className="w-full">
+                    <Accordion className="w-full">
                       {faqData.map((item, index) => (
                         <AccordionItem 
                           key={item.id} 

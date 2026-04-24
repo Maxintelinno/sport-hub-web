@@ -8,6 +8,7 @@
     "owners": "For Owners",
     "guide": "Guide",
     "contact": "Contact",
+    "blog": "Blog",
     "download": "Download App",
     "lang_th": "Thai",
     "lang_en": "English",
@@ -281,5 +282,44 @@
     "cta_subtitle": "If you have other questions, feel free to contact our support team directly.",
     "cta_button": "Contact Support",
     "back_home": "Back to Home"
+  },
+  "Blog": {
+    "title": "Sport Hub Blog",
+    "subtitle": "Great articles about sports, health, and techniques you shouldn't miss.",
+    "read_more": "Read More",
+    "back_to_blog": "Back to Blog",
+    "posted_by": "By",
+    "posts": {
+      "post1": {
+        "slug": "choosing-artificial-turf",
+        "title": "5 Techniques for Choosing the Right Artificial Turf for Your Team",
+        "excerpt": "Choosing an artificial turf field isn't hard, but you need to consider several factors such as grass quality, area, and convenience...",
+        "content": "Choosing a high-quality artificial turf field will make your game more fun and safe. Here are 5 key techniques:\n\n1. Check Grass Quality: Good artificial turf should be soft and not too abrasive.\n2. Drainage System: Standard fields must have good drainage to play even after rain.\n3. Lighting: For night play, spotlights must be bright enough and evenly distributed.\n4. Facilities: Restrooms, parking, and shops affect team convenience.\n5. Price and Location: Choose a field that is easy to travel to and fits your budget.",
+        "date": "Apr 20, 2024",
+        "author": "Admin SportHub",
+        "category": "Technique",
+        "image": "/blog/football-turf.png"
+      },
+      "post2": {
+        "slug": "badminton-gear-for-beginners",
+        "title": "Badminton Equipment Guide for Beginners",
+        "excerpt": "If you've just started taking interest in badminton, rackets and shoes are the heart of what you should choose correctly...",
+        "content": "For beginners starting badminton, choosing the right equipment helps develop skills faster:\n\n- Racket: Choose a lightweight racket (4U or 3U) to reduce wrist fatigue.\n- Shoes: Very important! Must be specific badminton shoes to prevent ankle sprains.\n- Shuttlecock: Choose durable ones with consistent flight patterns.\n- Sports Apparel: Should be breathable and highly flexible for agility.",
+        "date": "Apr 18, 2024",
+        "author": "Pro Player",
+        "category": "Equipment",
+        "image": "/blog/badminton-gear.png"
+      },
+      "post3": {
+        "slug": "importance-of-warm-up",
+        "title": "Why is Warming Up Important Before the Game?",
+        "excerpt": "Many might neglect warming up, but did you know it helps reduce injury risk by up to 70%...",
+        "content": "Warming up is a step you should never skip:\n\n1. Prepare Muscles: Helps increase body temperature and make muscles flexible.\n2. Reduce Injury: Warming up prepares joints and tendons for impact.\n3. Improve Performance: Heart and lungs gradually start working harder.\n4. Mental Preparation: Helps you focus and stay concentrated on the game.",
+        "date": "Apr 15, 2024",
+        "author": "Coach K",
+        "category": "Health",
+        "image": "/blog/warm-up.png"
+      }
+    }
   }
 }
