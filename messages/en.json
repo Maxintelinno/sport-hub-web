@@ -75,6 +75,7 @@
     "contact": "Contact",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
+    "faq": "FAQ",
     "rights": "© 2024 Royal Sports Hub. All rights reserved."
   },
   "About": {
@@ -101,6 +102,184 @@
     "why_item2_title": "Innovation",
     "why_item2_desc": "Constantly developing new features to meet modern lifestyles.",
     "why_item3_title": "Growing Community",
-    "why_item3_desc": "Not just a booking app, but a space for true sports lovers."
+    "why_item3_desc": "Not just a booking app, but a community for true sports lovers."
+  },
+  "Privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Privacy Policy",
+    "intro_title": "1. Introduction",
+    "intro_content": "Sport Hub (\"we\", \"our\") values your privacy and is committed to protecting your personal data.",
+    "data_collect_title": "2. Information We Collect",
+    "data_collect_content": "We may collect the following information:",
+    "data_collect_list": [
+      "Full Name",
+      "Phone Number",
+      "Email (optional)",
+      "Booking data",
+      "Payment history",
+      "Device information"
+    ],
+    "purpose_title": "3. How We Use Data",
+    "purpose_content": "We use the information to:",
+    "purpose_list": [
+      "Booking services",
+      "OTP verification",
+      "Payment processing",
+      "Notifications",
+      "Improve user experience",
+      "Fraud prevention"
+    ],
+    "disclosure_title": "4. Data Sharing",
+    "disclosure_content": "We do not sell your data. Data may be shared with:",
+    "disclosure_list": [
+      "Payment providers (Omise)",
+      "Cloud services",
+      "Legal requirements"
+    ],
+    "retention_title": "5. Data Retention",
+    "retention_content": "We retain data only as long as necessary.",
+    "security_title": "6. Security",
+    "security_content": "We implement:",
+    "security_list": [
+      "HTTPS encryption",
+      "Access control",
+      "Secure infrastructure"
+    ],
+    "rights_title": "7. User Rights",
+    "rights_content": "You can:",
+    "rights_list": [
+      "Access your data",
+      "Request corrections",
+      "Request deletion"
+    ],
+    "cookies_title": "8. Cookies",
+    "cookies_content": "Used for analytics and experience improvement",
+    "changes_title": "9. Policy Updates",
+    "changes_content": "We may update this policy periodically",
+    "contact_title": "10. Contact",
+    "contact_content": "Email: support@sporthub.in.th",
+    "last_updated": "Last updated: April 24, 2026",
+    "back_to_home": "Back to Home"
+  },
+  "Terms": {
+    "title": "Terms of Service",
+    "subtitle": "Terms of Service",
+    "toc_title": "Table of Contents",
+    "intro_title": "1. Introduction",
+    "intro_content": "Welcome to Sport Hub, a sports field booking platform. By using our service, you agree to these terms.",
+    "registration_title": "2. Account Registration",
+    "registration_list": [
+      "Users must provide accurate information and are responsible for their accounts."
+    ],
+    "booking_title": "3. Booking Policy",
+    "booking_list": [
+      "Bookings are confirmed only after system confirmation.",
+      "Users must verify details before confirming."
+    ],
+    "payment_title": "4. Payment",
+    "payment_list": [
+      "Payments are processed via online gateways (e.g., QR, Omise)."
+    ],
+    "cancellation_title": "5. Cancellation & Refund",
+    "cancellation_content": "Refunds may be provided as:",
+    "cancellation_list": [
+      "System credits",
+      "Original payment method"
+    ],
+    "credits_title": "6. Credits",
+    "credits_content": "Credits:",
+    "credits_list": [
+      "Can be used for booking",
+      "Cannot be withdrawn as cash",
+      "May have expiration"
+    ],
+    "misconduct_title": "7. Prohibited Activities",
+    "misconduct_content": "Activities:",
+    "misconduct_list": [
+      "System abuse",
+      "Fake bookings",
+      "Unauthorized access"
+    ],
+    "misconduct_footer": "Violators may be suspended immediately.",
+    "roles_title": "8. Roles (Owner / Staff)",
+    "roles_list": [
+      "Owners can assign staff with limited access permissions."
+    ],
+    "liability_title": "9. Liability",
+    "liability_list": [
+      "We act as a booking platform and are not responsible for on-site issues."
+    ],
+    "suspension_title": "10. Account Suspension",
+    "suspension_content": "Notice:",
+    "suspension_list": [
+      "We may suspend accounts violating terms."
+    ],
+    "suspension_footer": "",
+    "changes_title": "11. Changes",
+    "changes_content": "Terms may be updated without prior notice.",
+    "law_title": "12. Governing Law",
+    "law_content": "This agreement is governed by Thai law.",
+    "contact_title": "13. Contact",
+    "contact_content": "support@sporthub.in.th",
+    "last_updated": "Last updated: April 24, 2026",
+    "back_to_home": "Back to Home"
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Common questions and answers about using Sport Hub for players and venue owners.",
+    "search_placeholder": "Search questions...",
+    "not_found": "No matching questions found",
+    "categories": {
+      "all": "All",
+      "booking": "Booking",
+      "payment": "Payment",
+      "cancellation": "Cancellation & Credits",
+      "owner": "For Venue Owners",
+      "security": "Account & Security"
+    },
+    "questions": {
+      "q1": "What is Sport Hub?",
+      "a1": "Sport Hub is a platform for searching, booking, and managing sports venues. It allows users to choose venues, dates, and times, and make payments conveniently in one place.",
+      "q2": "Do I need to register before booking?",
+      "a2": "Users can view venues and details without logging in, but a registration or login is required to confirm a booking.",
+      "q3": "Can I choose the date and time myself?",
+      "a3": "Yes, users can select their preferred date, time, and venue from the available slots shown in the system.",
+      "q4": "How do I know if my booking was successful?",
+      "a4": "Once payment is received and confirmed, the booking status will change to 'Confirmed'. You can view details in the 'My Bookings' menu.",
+      "q5": "What payment methods does Sport Hub support?",
+      "a5": "The system supports QR Payment and other methods specified by the system periodically.",
+      "q6": "What if I scanned the QR but the status hasn't updated?",
+      "a6": "Usually, the status updates automatically within seconds. If it doesn't change, please wait a moment or contact support with your booking ID.",
+      "q7": "Can I pay cash at the venue?",
+      "a7": "This depends on the venue's conditions. For online bookings, we recommend paying through the system for complete confirmation and tracking.",
+      "q8": "Can I cancel my booking?",
+      "a8": "Yes, cancellations are allowed according to system conditions. The refund amount (as credits) depends on how early you cancel before the scheduled time.",
+      "q9": "What are booking credits?",
+      "a9": "Booking credits are refunds from cancellations or system compensations. They can be used for future bookings under specified conditions.",
+      "q10": "Can booking credits be withdrawn as cash?",
+      "a10": "No, booking credits are for use within the Sport Hub platform only and cannot be withdrawn, transferred, or exchanged for cash.",
+      "q11": "Do booking credits expire?",
+      "a11": "Booking credits may have an expiration date. Users can check the expiry date on their account page or the checkout screen.",
+      "q12": "How can venue owners join the platform?",
+      "a12": "Owners can register for an owner account and add venue details, photos, pricing, operating hours, and more through the system.",
+      "q13": "Can owners manage offline bookings?",
+      "a13": "Yes, owners can add offline bookings (e.g., walk-ins or phone calls) to prevent double-booking with the online system.",
+      "q14": "If I have staff, can I separate their access permissions?",
+      "a14": "Yes, owners can add staff and assign specific permissions so they see only necessary information like schedules and queue management.",
+      "q15": "How do venue owners receive payments?",
+      "a15": "Revenue is recorded in the system, and owners can view balances, request withdrawals, and track transfer history according to specified conditions.",
+      "q16": "Is my data secure?",
+      "a16": "Sport Hub prioritizes data security by implementing identity verification, encryption, and access control measures.",
+      "q17": "What should I do if I forget my password?",
+      "a17": "Users can use the 'Forgot Password' menu to verify their identity and set a new password.",
+      "q18": "Can I change my personal information?",
+      "a18": "Yes, users can edit certain personal details in their profile page.",
+      "q19": "How can I contact support?",
+      "a19": "You can reach us at support@sporthub.in.th or through the contact channels on our website."
+    },
+    "cta_title": "Still have questions?",
+    "cta_subtitle": "If you have other questions, feel free to contact our support team directly.",
+    "cta_button": "Contact Support",
+    "back_home": "Back to Home"
   }
 }
