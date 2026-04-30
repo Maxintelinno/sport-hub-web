@@ -3,29 +3,27 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { Shield, ChevronLeft, Calendar, Mail, Globe, List, ArrowUp } from 'lucide-react';
+import { RotateCcw, ChevronLeft, Calendar, List, ArrowUp, Clock, BadgePercent } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 
-export default function PrivacyPage() {
-  const t = useTranslations('Privacy');
+export default function RefundPage() {
+  const t = useTranslations('Refund');
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const [activeSection, setActiveSection] = useState<string | null>('intro');
+  const [activeSection, setActiveSection] = useState<string | null>('overview');
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   const sections = [
-    { id: 'intro', title: t('intro_title'), content: t('intro_content') },
-    { id: 'data_collect', title: t('data_collect_title'), list: t.raw('data_collect_list') },
-    { id: 'purpose', title: t('purpose_title'), list: t.raw('purpose_list') },
-    { id: 'disclosure', title: t('disclosure_title'), list: t.raw('disclosure_list') },
-    { id: 'retention', title: t('retention_title'), list: t.raw('retention_list') },
-    { id: 'security', title: t('security_title'), list: t.raw('security_list') },
-    { id: 'rights', title: t('rights_title'), list: t.raw('rights_list') },
-    { id: 'cookies', title: t('cookies_title'), content: t('cookies_content') },
-    { id: 'changes', title: t('changes_title'), content: t('changes_content') },
-    { id: 'contact', title: t('contact_title'), content: t('contact_content') },
+    { id: 'overview', title: t('overview_title'), content: t('overview_content') },
+    { id: 'timeframes', title: t('timeframes_title'), list: t.raw('timeframes_list') },
+    { id: 'methods', title: t('methods_title'), content: t('methods_content') },
+    { id: 'rules', title: t('rules_title'), list: t.raw('rules_list') },
+    { id: 'failure', title: t('failure_title'), content: t('failure_content') },
+    { id: 'system_cancel', title: t('system_cancel_title'), content: t('system_cancel_content') },
+    { id: 'abuse', title: t('abuse_title'), content: t('abuse_content') },
+    { id: 'final_rights', title: t('final_rights_title'), content: t('final_rights_content') },
   ];
 
   const handleLanguageChange = (newLocale: string) => {
@@ -80,7 +78,7 @@ export default function PrivacyPage() {
               <ChevronLeft className="h-6 w-6 transition-transform group-hover:-translate-x-1" />
             </Link>
             <div className="flex items-center gap-2">
-              <Shield className="h-6 w-6 text-[#0B3D2E]" />
+              <RotateCcw className="h-6 w-6 text-[#0B3D2E]" />
               <h1 className="text-xl font-black tracking-tight text-[#0B3D2E]">{t('title')}</h1>
             </div>
           </div>
@@ -157,8 +155,39 @@ export default function PrivacyPage() {
                       </p>
                     )}
                     
-                    {section.list && Array.isArray(section.list) && (
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                    {section.id === 'timeframes' && section.list && Array.isArray(section.list) && (
+                      <div className="mt-6 grid grid-cols-1 gap-4">
+                        {section.list.map((item: string, i: number) => {
+                          const parts = item.split('→');
+                          const time = parts[0]?.trim();
+                          const refund = parts[1]?.trim();
+                          
+                          return (
+                            <div 
+                              key={i} 
+                              className={cn(
+                                "flex items-center justify-between p-5 rounded-[1.5rem] border font-medium transition-all",
+                                i === 0 ? "bg-green-50/40 border-green-100 text-green-900" : 
+                                i === 1 ? "bg-amber-50/40 border-amber-100 text-amber-900" : 
+                                "bg-red-50/40 border-red-100 text-red-900"
+                              )}
+                            >
+                              <div className="flex items-center gap-3">
+                                <Clock className="h-5 w-5 shrink-0" />
+                                <span className="text-base font-semibold">{time}</span>
+                              </div>
+                              <div className="flex items-center gap-2 bg-white px-4 py-1.5 rounded-xl shadow-sm border border-inherit/30">
+                                <BadgePercent className="h-4 w-4 text-[#0B3D2E]" />
+                                <span className="text-sm font-bold text-[#0B3D2E]">{refund}</span>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+
+                    {section.id !== 'timeframes' && section.list && Array.isArray(section.list) && (
+                      <ul className="grid grid-cols-1 gap-3 mt-4">
                         {section.list.map((item: string, i: number) => (
                           <li key={i} className="flex items-center gap-3 bg-gray-50/50 p-4 rounded-2xl border border-gray-100/20 hover:bg-gray-50 transition-all font-medium text-gray-700 text-[0.95rem]">
                             <div className="w-2 h-2 bg-[#0B3D2E] rounded-full mt-0.5 shrink-0" />
@@ -180,13 +209,13 @@ export default function PrivacyPage() {
         <div className="container mx-auto max-w-4xl flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3 text-gray-500 text-sm">
             <Calendar className="h-4 w-4" />
-            <span className="font-medium">{t('last_updated')}</span>
+            <span className="font-medium">มีผลบังคับใช้: 24 เมษายน 2569</span>
           </div>
           <Link
-            href="/refund"
+            href="/"
             className="w-full md:w-auto text-center bg-[#0B3D2E] text-white font-bold px-8 py-3.5 rounded-2xl hover:bg-[#07281E] transition-all shadow-lg hover:shadow-xl active:scale-98"
           >
-            อ่านนโยบายการยกเลิกและคืนเงิน
+            กลับสู่หน้าหลัก
           </Link>
         </div>
       </div>

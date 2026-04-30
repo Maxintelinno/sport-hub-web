@@ -109,121 +109,124 @@
     "title": "Privacy Policy",
     "subtitle": "Privacy Policy",
     "intro_title": "1. Introduction",
-    "intro_content": "Sport Hub (\"we\", \"our\") values your privacy and is committed to protecting your personal data.",
-    "data_collect_title": "2. Information We Collect",
-    "data_collect_content": "We may collect the following information:",
+    "intro_content": "Sport Hub (\"we\", \"our\", \"Company\") values your privacy and is committed to protecting your personal data in a secure and transparent manner.",
+    "data_collect_title": "2. Data We Collect",
     "data_collect_list": [
       "Full Name",
       "Phone Number",
       "Email (optional)",
-      "Booking data",
+      "Booking history",
       "Payment history",
-      "Device information"
+      "Device information & usage (e.g., IP Address, Device ID)"
     ],
-    "purpose_title": "3. How We Use Data",
-    "purpose_content": "We use the information to:",
+    "purpose_title": "3. Purpose of Data Use",
     "purpose_list": [
-      "Booking services",
-      "OTP verification",
+      "Provide sports venue booking services",
+      "Identity verification (OTP)",
       "Payment processing",
-      "Notifications",
+      "Booking notifications",
       "Improve user experience",
-      "Fraud prevention"
+      "Prevent fraudulent activities"
     ],
     "disclosure_title": "4. Data Sharing",
-    "disclosure_content": "We do not sell your data. Data may be shared with:",
     "disclosure_list": [
-      "Payment providers (Omise)",
-      "Cloud services",
-      "Legal requirements"
+      "Payment service providers",
+      "Cloud & infrastructure providers",
+      "Where required by law"
     ],
     "retention_title": "5. Data Retention",
-    "retention_content": "We retain data only as long as necessary.",
-    "security_title": "6. Security",
-    "security_content": "We implement:",
-    "security_list": [
-      "HTTPS encryption",
-      "Access control",
-      "Secure infrastructure"
+    "retention_list": [
+      "Retained only as long as necessary for the purposes",
+      "Subject to deletion request per user rights"
     ],
-    "rights_title": "7. User Rights",
-    "rights_content": "You can:",
+    "security_title": "6. Security Measures",
+    "security_list": [
+      "Standard data encryption",
+      "Strict internal access control",
+      "Secured infrastructure protocols"
+    ],
+    "rights_title": "7. User Rights (PDPA)",
     "rights_list": [
-      "Access your data",
-      "Request corrections",
-      "Request deletion"
+      "Right to access & copy data",
+      "Right to data correction",
+      "Right to data erasure",
+      "Right to withdraw consent"
     ],
     "cookies_title": "8. Cookies",
-    "cookies_content": "Used for analytics and experience improvement",
-    "changes_title": "9. Policy Updates",
-    "changes_content": "We may update this policy periodically",
+    "cookies_content": "We use cookies to track sessions and gather basic usage metrics for better experience.",
+    "changes_title": "9. Policy Changes",
+    "changes_content": "This policy may be updated to remain aligned with legal/business standards.",
     "contact_title": "10. Contact",
-    "contact_content": "Email: support@sporthub.in.th",
+    "contact_content": "Email support: support@sporthub.in.th",
     "last_updated": "Last updated: April 24, 2026",
     "back_to_home": "Back to Home"
   },
   "Terms": {
     "title": "Terms of Service",
     "subtitle": "Terms of Service",
-    "toc_title": "Table of Contents",
+    "version": "v1.0",
     "intro_title": "1. Introduction",
-    "intro_content": "Welcome to Sport Hub, a sports field booking platform. By using our service, you agree to these terms.",
-    "registration_title": "2. Account Registration",
-    "registration_list": [
-      "Users must provide accurate information and are responsible for their accounts."
-    ],
-    "booking_title": "3. Booking Policy",
-    "booking_list": [
-      "Bookings are confirmed only after system confirmation.",
-      "Users must verify details before confirming."
-    ],
-    "payment_title": "4. Payment",
-    "payment_list": [
-      "Payments are processed via online gateways (e.g., QR, Omise)."
-    ],
-    "cancellation_title": "5. Cancellation & Refund",
-    "cancellation_content": "Refunds may be provided as:",
-    "cancellation_list": [
-      "System credits",
-      "Original payment method"
-    ],
-    "credits_title": "6. Credits",
-    "credits_content": "Credits:",
-    "credits_list": [
-      "Can be used for booking",
-      "Cannot be withdrawn as cash",
-      "May have expiration"
-    ],
-    "misconduct_title": "7. Prohibited Activities",
-    "misconduct_content": "Activities:",
-    "misconduct_list": [
-      "System abuse",
-      "Fake bookings",
-      "Unauthorized access"
-    ],
-    "misconduct_footer": "Violators may be suspended immediately.",
-    "roles_title": "8. Roles (Owner / Staff)",
-    "roles_list": [
-      "Owners can assign staff with limited access permissions."
-    ],
-    "liability_title": "9. Liability",
-    "liability_list": [
-      "We act as a booking platform and are not responsible for on-site issues."
-    ],
-    "suspension_title": "10. Account Suspension",
-    "suspension_content": "Notice:",
-    "suspension_list": [
-      "We may suspend accounts violating terms."
-    ],
-    "suspension_footer": "",
-    "changes_title": "11. Changes",
-    "changes_content": "Terms may be updated without prior notice.",
-    "law_title": "12. Governing Law",
-    "law_content": "This agreement is governed by Thai law.",
-    "contact_title": "13. Contact",
-    "contact_content": "support@sporthub.in.th",
+    "intro_content": "Welcome to Sport Hub. Your usage of this system signifies acceptance of all listed policies.",
+    "data_usage_title": "2. Personal Data Usage",
+    "data_usage_content": "Personal data strictly aligns with the principles of the Privacy Policy.",
+    "otp_title": "3. OTP Verification",
+    "otp_content": "OTP verification is mandated to safeguard account entry.",
+    "account_title": "4. Account Responsibility",
+    "account_content": "You hold full accountability for credential confidentiality.",
+    "booking_title": "5. Booking Policy",
+    "booking_content": "Bookings finalize exclusively upon digital receipt confirmation.",
+    "payment_title": "6. Payment Terms",
+    "payment_content": "Online transactions process instantaneously to finalize appointments.",
+    "refund_title": "7. Cancellation & Refund",
+    "refund_content": "Cancellation allowances fall within our operational guidelines.",
+    "credit_title": "8. Credit Usage",
+    "credit_content": "Platform credits are exclusive to booking utilities and non-withdrawable.",
+    "prohibited_title": "9. Prohibited Activities",
+    "prohibited_content": "Spamming, hacking, or malicious interactions remain severely outlawed.",
+    "rights_title": "10. Company Rights",
+    "rights_content": "We maintain rights to sever service endpoints against malicious entities.",
+    "liability_title": "11. Liability Disclaimer",
+    "liability_content": "We assume intermediary responsibilities exclusively.",
+    "security_title": "12. System Security",
+    "security_content": "Protective boundaries operate at high-grade data standards.",
+    "consent_title": "13. Communication Consent",
+    "consent_content": "You authorize platform messaging regarding direct booking updates.",
+    "updates_title": "14. Policy Updates",
+    "updates_content": "Changes are posted on site.",
+    "law_title": "15. Governing Law",
+    "law_content": "Applicable under existing Thai laws.",
+    "acceptance_title": "16. Acceptance",
+    "acceptance_content": "Account activation establishes your official binding compliance.",
     "last_updated": "Last updated: April 24, 2026",
     "back_to_home": "Back to Home"
+  },
+  "Refund": {
+    "title": "Cancellation & Refund Policy",
+    "subtitle": "Cancellation & Refund Policy (Refund Policy)",
+    "overview_title": "1. Overview",
+    "overview_content": "Ensuring consistent operations for booking stakeholders.",
+    "timeframes_title": "2. Cancellation Timeframes",
+    "timeframes_list": [
+      ">24 hours notice → 100% Refund",
+      "6–24 hours notice → 70% Refund",
+      "<6 hours notice → 0% (No Refund)"
+    ],
+    "methods_title": "3. Refund Methods",
+    "methods_content": "Disbursed via system-allocated digital vouchers/credits.",
+    "rules_title": "4. Credit Rules",
+    "rules_list": [
+      "Non-transferable across external users.",
+      "Zero cash liquidity guarantees.",
+      "Absolute 90-day expiration validity."
+    ],
+    "failure_title": "5. Payment Failure Cases",
+    "failure_content": "Interrupted transactional pathways recover within 3 to 5 banking days.",
+    "system_cancel_title": "6. System/Owner Cancellation",
+    "system_cancel_content": "100% automatic replenishment for venue-side scheduling conflicts.",
+    "abuse_title": "7. Abuse Prevention",
+    "abuse_content": "Flagrant chargeback exploitation enforces account closures.",
+    "final_rights_title": "8. Final Decision Rights",
+    "final_rights_content": "Sport Hub assumes absolute final jurisdiction over appeals."
   },
   "FAQ": {
     "title": "Frequently Asked Questions",

@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { FileText, ChevronLeft, Calendar, Mail, Globe, List } from 'lucide-react';
+import { FileText, ChevronLeft, Calendar, Mail, Globe, List, ArrowUp, CheckCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 
@@ -12,21 +12,26 @@ export default function TermsPage() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<string | null>('intro');
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   const sections = [
-    { id: 'section-1', title: t('intro_title'), content: t('intro_content') },
-    { id: 'section-2', title: t('registration_title'), list: t.raw('registration_list') },
-    { id: 'section-3', title: t('booking_title'), list: t.raw('booking_list') },
-    { id: 'section-4', title: t('payment_title'), list: t.raw('payment_list') },
-    { id: 'section-5', title: t('cancellation_title'), content: t('cancellation_content'), list: t.raw('cancellation_list') },
-    { id: 'section-6', title: t('credits_title'), list: t.raw('credits_list') },
-    { id: 'section-7', title: t('misconduct_title'), content: t('misconduct_content'), list: t.raw('misconduct_list'), footer: t('misconduct_footer') },
-    { id: 'section-8', title: t('roles_title'), list: t.raw('roles_list') },
-    { id: 'section-9', title: t('liability_title'), list: t.raw('liability_list') },
-    { id: 'section-10', title: t('suspension_title'), content: t('suspension_content'), list: t.raw('suspension_list'), footer: t('suspension_footer') },
-    { id: 'section-11', title: t('changes_title'), content: t('changes_content') },
-    { id: 'section-12', title: t('law_title'), content: t('law_content') },
+    { id: 'intro', title: t('intro_title'), content: t('intro_content') },
+    { id: 'data_usage', title: t('data_usage_title'), content: t('data_usage_content') },
+    { id: 'otp', title: t('otp_title'), content: t('otp_content') },
+    { id: 'account', title: t('account_title'), content: t('account_content') },
+    { id: 'booking', title: t('booking_title'), content: t('booking_content') },
+    { id: 'payment', title: t('payment_title'), content: t('payment_content') },
+    { id: 'refund', title: t('refund_title'), content: t('refund_content') },
+    { id: 'credit', title: t('credit_title'), content: t('credit_content') },
+    { id: 'prohibited', title: t('prohibited_title'), content: t('prohibited_content') },
+    { id: 'rights', title: t('rights_title'), content: t('rights_content') },
+    { id: 'liability', title: t('liability_title'), content: t('liability_content') },
+    { id: 'security', title: t('security_title'), content: t('security_content') },
+    { id: 'consent', title: t('consent_title'), content: t('consent_content') },
+    { id: 'updates', title: t('updates_title'), content: t('updates_content') },
+    { id: 'law', title: t('law_title'), content: t('law_content') },
+    { id: 'acceptance', title: t('acceptance_title'), content: t('acceptance_content') },
   ];
 
   const handleLanguageChange = (newLocale: string) => {
@@ -34,6 +39,10 @@ export default function TermsPage() {
   };
 
   useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 500);
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -42,85 +51,82 @@ export default function TermsPage() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.2, rootMargin: '-10% 0px -70% 0px' }
     );
 
+    window.addEventListener('scroll', handleScroll);
     sections.forEach((section) => {
       const element = document.getElementById(section.id);
       if (element) observer.observe(element);
     });
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
+  }, [sections]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 120,
+        top: element.offsetTop - 100,
         behavior: 'smooth',
       });
     }
   };
 
-  return (
-    <div className="min-h-screen bg-white pt-24 pb-20">
-      {/* Header Section */}
-      <section className="bg-[#0B3D2E] py-20 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
-            <Link 
-              href="/" 
-              className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors group"
-            >
-              <ChevronLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
-              {t('back_to_home')}
-            </Link>
+  const copyLinkToSection = (id: string) => {
+    const url = `${window.location.origin}${pathname}#${id}`;
+    navigator.clipboard.writeText(url);
+    alert('Copied section link to clipboard!');
+  };
 
-            <div className="bg-white/10 p-1 rounded-2xl backdrop-blur-md border border-white/20 flex items-center gap-1">
+  return (
+    <div className="min-h-screen bg-[#FAFAFA] text-[#1F2937] antialiased">
+      {/* Sticky Header */}
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm">
+        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Link href="/" className="p-2 rounded-xl hover:bg-gray-50 transition-all text-[#0B3D2E] group">
+              <ChevronLeft className="h-6 w-6 transition-transform group-hover:-translate-x-1" />
+            </Link>
+            <div className="flex items-center gap-2">
+              <FileText className="h-6 w-6 text-[#0B3D2E]" />
+              <h1 className="text-xl font-black tracking-tight text-[#0B3D2E]">{t('title')}</h1>
+              <span className="text-xs font-bold bg-[#0B3D2E]/10 text-[#0B3D2E] px-2 py-1 rounded-md ml-2">
+                {t('version') || 'v1.0'}
+              </span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="bg-gray-100 p-1 rounded-xl flex items-center gap-1 border border-gray-200/50">
               {['th', 'en'].map((l) => (
                 <button
                   key={l}
                   onClick={() => handleLanguageChange(l)}
                   className={cn(
-                    "px-4 py-1.5 rounded-xl text-sm font-bold transition-all",
-                    locale === l ? "bg-accent text-[#0B3D2E] shadow-lg" : "text-white/70 hover:text-white"
+                    "px-4 py-1.5 rounded-lg text-xs font-bold transition-all",
+                    locale === l ? "bg-[#0B3D2E] text-white shadow-sm" : "text-gray-500 hover:text-[#0B3D2E]"
                   )}
                 >
-                  {l === 'th' ? 'ภาษาไทย' : 'English'}
+                  {l === 'th' ? 'ไทย' : 'EN'}
                 </button>
               ))}
             </div>
           </div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm border border-white/20">
-              <FileText className="h-8 w-8 text-accent" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">
-              {t('title')}
-            </h1>
-            <p className="text-xl text-white/70 max-w-2xl font-light">
-              {t('subtitle')}
-            </p>
-          </motion.div>
         </div>
-      </section>
+      </header>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-6 py-20">
-        <div className="flex flex-col lg:flex-row gap-16">
-          {/* Table of Contents - Sidebar */}
+      <div className="container mx-auto px-6 py-12">
+        <div className="flex flex-col lg:flex-row gap-12">
+          {/* Table of Contents Sidebar */}
           <aside className="lg:w-80 shrink-0 hidden lg:block">
-            <div className="sticky top-32 bg-gray-50 p-8 rounded-3xl border border-gray-100">
-              <h3 className="text-lg font-bold text-[#0B3D2E] mb-6 flex items-center gap-2">
-                <List className="h-5 w-5 text-accent" />
-                {t('toc_title')}
+            <div className="sticky top-32 bg-white p-6 rounded-[2rem] shadow-md border border-gray-100 max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-[#0B3D2E]/20 scrollbar-track-transparent">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-[#0B3D2E]/60 mb-6 flex items-center gap-2">
+                <List className="h-4 w-4" />
+                สารบัญ (Contents)
               </h3>
               <nav className="space-y-1">
                 {sections.map((section) => (
@@ -130,8 +136,8 @@ export default function TermsPage() {
                     className={cn(
                       "w-full text-left px-4 py-2.5 rounded-xl text-sm transition-all duration-200 font-medium",
                       activeSection === section.id
-                        ? "bg-white text-[#0B3D2E] shadow-sm border border-gray-100 translate-x-1"
-                        : "text-gray-500 hover:text-[#0B3D2E] hover:bg-white/50"
+                        ? "bg-[#0B3D2E]/5 text-[#0B3D2E] font-bold border-l-4 border-[#0B3D2E]"
+                        : "text-gray-500 hover:text-[#0B3D2E] hover:bg-gray-50"
                     )}
                   >
                     {section.title}
@@ -141,17 +147,15 @@ export default function TermsPage() {
             </div>
           </aside>
 
-          {/* Policy Sections */}
-          <div className="flex-1 max-w-4xl">
+          {/* Main Content */}
+          <div className="flex-1 max-w-3xl bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border border-gray-100/50">
             {/* Mobile TOC */}
-            <div className="lg:hidden mb-12 bg-gray-50 p-6 rounded-2xl">
-              <h3 className="text-lg font-bold text-[#0B3D2E] mb-4 flex items-center gap-2">
-                <List className="h-5 w-5 text-accent" />
-                {t('toc_title')}
-              </h3>
+            <div className="lg:hidden mb-8 bg-gray-50 p-4 rounded-2xl border border-gray-100">
+              <label className="text-xs font-bold text-[#0B3D2E]/60 uppercase mb-2 block">ข้ามไปยังส่วนที่ต้องการ</label>
               <select 
-                className="w-full p-4 rounded-xl border border-gray-200 bg-white font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-accent"
+                className="w-full p-3 rounded-xl border border-gray-200 bg-white font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#0B3D2E]"
                 onChange={(e) => scrollToSection(e.target.value)}
+                value={activeSection || ''}
               >
                 {sections.map((section) => (
                   <option key={section.id} value={section.id}>
@@ -161,107 +165,82 @@ export default function TermsPage() {
               </select>
             </div>
 
-            <div className="space-y-24">
-              {sections.map((section, index) => (
+            {/* Content Blocks */}
+            <div className="space-y-16">
+              {sections.map((section) => (
                 <motion.div
                   key={section.id}
                   id={section.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="group"
+                  transition={{ duration: 0.4 }}
+                  className="group scroll-mt-24"
                 >
-                  <h2 className="text-3xl font-bold text-[#0B3D2E] mb-8 flex items-center gap-4">
-                    <span className="w-1.5 h-10 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {section.title}
-                  </h2>
-                  
-                  <div className="pl-6 border-l-2 border-gray-100 group-hover:border-accent/30 transition-colors">
-                    {section.content && (
-                      <p className="text-gray-600 leading-relaxed text-lg mb-8 whitespace-pre-wrap">
-                        {section.content}
-                      </p>
-                    )}
-                    
-                    {section.list && (
-                      <div className="grid grid-cols-1 gap-4">
-                        {section.list.map((item: string, i: number) => (
-                          <div key={i} className="flex items-start gap-4 bg-gray-50/50 p-5 rounded-2xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
-                            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center shrink-0 shadow-sm text-sm font-bold text-accent">
-                              {i + 1}
-                            </div>
-                            <span className="text-gray-700 font-medium leading-relaxed">{item}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-2xl font-black text-[#0B3D2E] tracking-tight">
+                      {section.title}
+                    </h2>
+                    <button
+                      onClick={() => copyLinkToSection(section.id)}
+                      className="opacity-0 group-hover:opacity-100 text-xs font-semibold text-gray-400 hover:text-[#0B3D2E] transition-opacity px-2 py-1 rounded-lg bg-gray-50"
+                    >
+                      คัดลอกลิงก์
+                    </button>
+                  </div>
 
-                    {section.footer && (
-                      <p className="mt-8 text-accent font-bold text-lg bg-accent/5 px-6 py-4 rounded-2xl inline-block">
-                        {section.footer}
+                  <div className="pl-6 border-l-2 border-gray-100 group-hover:border-[#0B3D2E]/30 transition-colors">
+                    {section.content && (
+                      <p className="text-gray-600 leading-relaxed text-[1.05rem] whitespace-pre-wrap font-medium">
+                        {section.content}
                       </p>
                     )}
                   </div>
                 </motion.div>
               ))}
-
-              {/* Contact Section */}
-              <motion.div
-                id="contact"
-                className="bg-[#0B3D2E] text-white p-12 rounded-[3rem] shadow-2xl relative overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-                <h2 className="text-3xl font-black mb-8 relative z-10">
-                  {t('contact_title')}
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
-                  <div className="flex items-start gap-5">
-                    <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md border border-white/20">
-                      <Mail className="h-7 w-7 text-accent" />
-                    </div>
-                    <div>
-                      <p className="text-white/60 mb-1 font-medium">Email Support</p>
-                      <p className="text-xl font-bold">support@sporthub.in.th</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-5">
-                    <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md border border-white/20">
-                      <Globe className="h-7 w-7 text-accent" />
-                    </div>
-                    <div>
-                      <p className="text-white/60 mb-1 font-medium">Official Website</p>
-                      <p className="text-xl font-bold">www.sporthub.in.th</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
             </div>
 
-            {/* Final Footer */}
-            <div className="mt-24 pt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-8">
-              <div className="flex items-center gap-3 text-gray-400">
-                <Calendar className="h-5 w-5" />
-                <span className="font-medium">{t('last_updated')}</span>
-              </div>
-              <div className="flex items-center gap-8">
-                <Link 
-                  href="/privacy" 
-                  className="text-gray-500 hover:text-[#0B3D2E] font-bold transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-                <Link 
-                  href="/" 
-                  className="bg-[#0B3D2E] text-white px-8 py-3 rounded-2xl font-bold hover:bg-[#14532d] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-                >
-                  {t('back_to_home')}
-                </Link>
+            {/* Acceptance Section (Final) */}
+            <div className="mt-16 pt-8 border-t border-gray-100">
+              <div className="bg-[#0B3D2E]/5 p-6 rounded-3xl border border-[#0B3D2E]/10 flex items-start gap-4">
+                <CheckCircle className="h-6 w-6 text-[#0B3D2E] shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-bold text-[#0B3D2E] mb-1">ความรับผิดชอบในการใช้งาน</h4>
+                  <p className="text-sm text-gray-600 font-medium">
+                    การใช้บริการอย่างต่อเนื่องหมายถึงการยินยอมปฏิบัติตามเงื่อนไขล่าสุดทุกประการ
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Sticky Bottom CTA */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-lg border-t border-gray-100 z-40 shadow-2xl p-4 flex justify-center items-center">
+        <div className="container mx-auto max-w-4xl flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex items-center gap-3 text-gray-500 text-sm">
+            <Calendar className="h-4 w-4" />
+            <span className="font-medium">{t('last_updated')}</span>
+          </div>
+          <Link
+            href="/privacy"
+            className="w-full md:w-auto text-center bg-[#0B3D2E] text-white font-bold px-8 py-3.5 rounded-2xl hover:bg-[#07281E] transition-all shadow-lg hover:shadow-xl active:scale-98"
+          >
+            อ่านนโยบายความเป็นส่วนตัว
+          </Link>
+        </div>
+      </div>
+
+      {/* Back to Top Button */}
+      {showBackToTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-24 right-6 z-50 bg-white text-[#0B3D2E] border border-gray-200 p-3.5 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all"
+        >
+          <ArrowUp className="h-5 w-5 font-bold" />
+        </button>
+      )}
     </div>
   );
 }
